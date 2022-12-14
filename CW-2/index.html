@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+  
+    <style>
+        body{
+            margin: 0;
+        }
+        #nav>div:nth-child(1){
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            background-color: rgb(56,89,84);
+            color: white;
+           
+          
+           padding-left: 280px;
+           padding-right: 280px;
+           margin: 0px;  
+           text-align: center; 
+           align-items: center;
+           font-family: Arial;
+          
+        }
+        #nav>div:nth-child(2){
+          display: flex;
+          justify-content: end;
+          padding-right: 50px;
+          background-color: rgb(212, 212, 211);
+        }
+      #nav>div:nth-child(3){
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 10px;
+        
+      }
+      #nav>div:nth-child(3)>div:nth-child(2){
+        padding-right: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      
+     #nav input{
+        padding: 12px;
+        padding-left: 20px;
+        padding-right: 40px;
+        border-radius: 4px;
+        border-color: grey;
+     }
+     #nav>div:nth-child(4){
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        display: flex;
+        justify-content: space-around;
+        padding-right: 300px;
+     }
+
+     #content{
+        width: 93%;
+        margin: auto;
+        margin-top: 30px;
+        
+     }
+     #content>div>img{
+        width: 100%;
+     }
+     #content>div:nth-child(2){
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        margin-top: 35px;
+     }
+     #content img{
+       width: 100%;
+     }
+     #content>div:nth-child(3){
+        margin-top: 35px;
+      
+        gap: 20px;
+     }
+     #content>div:nth-child(4){
+        margin-top: 35px;
+        display: flex;
+        gap: 20px;
+     }
+     #content>div:nth-child(5){
+        display: flex;
+        gap: 20px;
+        margin-top: 35px;
+     }
+     #content>div:nth-child(6)>h2+div{
+        display: flex;
+        gap: 20px;
+        margin-top: 35px;
+     }
+     #footer{
+        width: 93%;
+        margin: auto;background-color: rgb(230, 229, 223);
+     }
+     #footer>div:nth-child(2){
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        padding-right: 100px;
+     }
+     #footer>div:nth-child(2)+p{
+        padding-left: 100px;
+        padding-right: 100px;
+     }
+     #footer input{
+        padding-left: 150px;
+        padding-right: 100px;
+        margin-right: 15px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+     }
+     #footer button{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        background-color: rgb(75,86,102);
+        color: white;
+        border: none;
+     }
+    #info{
+        display: flex;
+        justify-content: space-around;
+    }
+  #info+div{
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <div>
+        <p> <i>The Gleaming promise Event ends tonight!</i></p>
+        <p>our BESTSELLING mirror is 30% OFF!! </p>
+        <p><u>ready to ship. ready to give(or get) details</u></p>
+        </div>
+        <div>
+            <p> <ion-icon name="globe-outline"></ion-icon> English($) &#160 <ion-icon style="font-size:20px;" name="person-outline"></ion-icon> &#160
+                &#160 <span id="signIn">Sign In</span>/<span id="signUp">Sign Up</span></p>
+        </div>
+        <div>
+            <div>
+                <img 
+                src="https://images.ctfassets.net/5de70he6op10/7q3Z6vJ6UEPFyAPKAFZZxl/1a22eec777828277571187c43306e983/Anthropologie_Holiday_Lockup__1_update.svg" />
+            <img 
+                src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg" />
+            </div>
+            <div>
+                
+              <input type="text" placeholder="Search Anthropolpgie " /> 
+              <ion-icon style="font-size:28px;" name="bag-outline"></ion-icon>
+            </div>
+           
+        </div>
+        <div>
+            <p style="color: red;">Gifts  </p>
+            <p>New!   </p>
+            <p>Dresses       </p>
+            <p>Clothing       </p>
+            <p>Shoes       </p>
+            <p>Accessories    </p>
+            <p>BHLDN Weddings  </p>
+            <p>  Beauty & Wellnes  </p>
+            <p>Home & Furniture </p>
+            <p> Garden & Outdoor </p>
+            <p> Sale </p>
+        </div>
+        </div>
+
+       <div id="content">
+        <div> <img src="https://images.ctfassets.net/5de70he6op10/g4Rao5dp4XYh9mHJ31Mku/d4fa659fb2753c2aba8ff20538ba126f/121322_Upto50Off_SelectGifting_HPGSecondaryBanner_LS.jpg?w=2882&q=80&fm=webp"/></div>
+       <div>
+        <div> <img src="https://images.ctfassets.net/5de70he6op10/1UtgIRn3AHo7yfB3CsbYdw/ced16c178459bc64efcf64a82422808b/LL_M1a.jpg?w=856&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/3RVZ7uybOuPPShdGFMqT8v/b5959346a8523c91664dd622f29f0b42/LL_M1b.jpg?w=856&q=80&fm=webp"></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/29ixjcb2lf5i9QNbF0PWJq/6548be3127a3a13e7b4f13e6f029d059/LL_M1c.jpg?w=856&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/575n66TNKySGUMZHoEPyk1/a8c0be74eb5f6fb558385a19b5cfc120/LL_M1d.jpg?w=856&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/2FN1eYunGjb7iEefWXUqzL/9ebe26aa22ab3e675b1f27195af512f6/LL_M1e.jpg?w=856&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/4zCA1PXpVLBKmHSl7Od02R/1b5efdb8c8bb14c2edfa17d49818a4b5/LL_M1f.jpg?w=856&q=80&fm=webp"/></div>
+       </div> 
+       <div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/4EuNTSVOImo7nGIV8Vt8Du/b93634eb017dd5a0350edbbcb221f30c/HPGModule_LS_02.jpg?w=2640&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/4Coxu47V0tyfirEz2UcoJM/176476dd10f81019582c3e3de68eaefa/LS_M4_Winterwhites.jpg?w=2641&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/6smg43UznC0EXEEvtUZOeK/2d857986576d95ecf780716a37fc0b77/LS_M5_BHLDN.jpg?w=2641&q=80&fm=webp"/></div>
+       </div> 
+       <div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/6HzwDJ0UOm79B8yDxaLdZl/706de5f3b83a54dd4bb0a54f48738f1a/RR_Tops_Default.jpg?w=856&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/6TIhpD3Lh2NHWsTFjH5A4h/abd257d017b494dc9cf077bc14906653/RR_Shoes_Default.jpg?w=856&q=80&fm=webp"/></div>
+        <div><img src="https://images.ctfassets.net/5de70he6op10/CShsGv8tmOEkdHcEZKrZn/4496b2a68f8b9d4b5efee0ed2fb17690/RR_BeddingPillowsThrows.jpg?w=856&q=80&fm=webp"/></div>
+       </div> 
+       
+       <div>
+        <div><img src="https://images.urbndata.com/is/image/Anthropologie/4130916210121_067_b?$an-category$&qlt=80&fit=constrain"/>
+        <p>By Anthropologie Burnout Velvet Dress</p></div>
+        <div><img src="https://images.urbndata.com/is/image/Anthropologie/4130464030208_069_b2?$an-category$&qlt=80&fit=constrain"/>
+        <p>Hutch Floral Wrap Dress</p></div>
+        <div><img src="https://images.urbndata.com/is/image/Anthropologie/4130916210109_030_b?$an-category$&qlt=80&fit=constrain"/>
+        <p>The Somerset Maxi Dress: Velvet Edition</p></div>
+        <div><img src="https://images.urbndata.com/is/image/Anthropologie/4130024090114_067_b2?$an-category$&qlt=80&fit=constrain"/>
+        <p>Maeve Sheer Side-Slit Dress</p></div>
+        <div><img src="https://images.urbndata.com/is/image/Anthropologie/4130265640013_001_b2?$an-category$&qlt=80&fit=constrain"/>
+            <p>Corey Lynn Calter Maxi Shirt Dress</p></div></div>
+          <div>
+            
+            <h2 style="text-align:center">More To Explore</h2>
+            <div>
+                
+                <div><img src="https://images.ctfassets.net/5de70he6op10/61SwHEwIBXGqyievjZO7vG/4399fed484247331197d235ddd824007/MTE_1_Giftcards.jpg?w=856&q=80&fm=webp"/>
+                <p>The Sure-to-Please Shop<br>
+                    The best present? The one they pick themselves!</p></div>
+                <div><img src="https://images.ctfassets.net/5de70he6op10/5rXqHDYoqXytAscv6my5TW/26470fa9cfec82723705866d62c341bb/MTE_3.jpg?w=856&q=80&fm=webp"/>
+                <p>The Art of the Dress<br>
+                    Introducing a lovingly curated collection of sculptural silhouettes, enlightened details, and everlasting impressions.</p></div>
+                <div><img src="https://images.ctfassets.net/5de70he6op10/4lWXFXOjiia6HPkbeCNQGK/47e13656ccbcb123efc765f17b3d903d/MTE_3_Resortwear.jpg?w=856&q=80&fm=webp"/>
+                <p>Destination: Vacation<br>
+                    If sunshine is a state of mind, consider these looks your virtual boarding pass.</p></div>
+            </div>
+            <p style="text-align: center;">Exclusions apply. See details.</p>
+            
+          </div>
+          <hr>
+       </div>
+
+       <div id="footer">
+        <div>
+            <h2>About Us</h2>
+            <p>Our mission at Anthropologie has always been to surprise and delight you with unexpected, distinctive finds for your closet and home. We source and craft all of our products with care, ensuring that any treasure you find at Anthropologie is unique, just like you. Explore our dresses shop to find styles and fits perfect for any occasion, from cocktail party dresses to wedding guest dresses to casual daytime silhouettes. Shop BHLDN and take a look at our selection of wedding dresses. Browse party skirts, wide-leg pants and jeans, and blouses that will turn heads. Complete your look with uncommon accessories—think only-here slides and head-turning totes. Discover our expansive home collections, from furniture to curtains, decorative pillows to duvets, wall art to Moroccan-inspired rugs. Looking for a housewarming gift? Try a coffee table book, original glassware or a set of coasters.</p>
+        <hr>
+        </div>
+        <div>
+            <div>
+                <h2>Sign Up for Email</h2>                 
+                <p>Receive early access to new arrivals, sales, exclusive content, events and much more!</p>
+            </div>
+            <div>
+                <h3>Email Adresss*</h3>
+                <input type="text"/>
+                <button>SUBMIT</button>
+            </div>
+            
+        </div>
+        <p>By signing up, you will receive Anthropologie offers, promotions and other commercial messages. You are also agreeing to Anthropologie’s Privacy Policy. You may unsubscribe at any time.</p>
+      <hr> 
+      <div id="info">
+        <div>
+            <h3>Help</h3>
+            <p>Track Your Order</p>
+            <p>Start A Return Or Exchange (US)</p>
+            <p>Returns & Exchanges</p>
+            <p>Returns & Exchanges</p>
+            <p>Shoping</p>
+            <p>Customer Service</p>
+            <p>Current Promotions</p>
+            <p>Product Recalls</p>   
+        </div>
+        <div>
+            <h3>About</h3>
+            <p>Our Story</p>
+            <p>Events</p>
+            <p>A Greater Good</p>
+            <p>Diversity & Inclusion</p>
+            <p>Stories</p>
+          
+        </div>
+        <div>
+            <h3>Services</h3>
+            <p>AnthroPerks</p>
+            <p>Gift Cards</p>
+            <p>AnthroLiving Designer & Trade Program</p>
+            <p>Furniture: Guides & Services</p>
+            <p>Store Pickup & Collection Points</p>
+            <p>Klarna</p>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <p>Contact Us</p>
+            <p>Stay Connected</p>
+            <p>Careers</p>
+            <p>Styling Services</p>
+            <p>Request A Catalog</p>
+        </div>
+        <div>
+            <a href="https://www.anthropologie.com/stores">Store Locator</a><br>
+            <a href="signIn.html">Get Email</a>
+        </div>
+
+      </div>  
+      <div><img src="https://images.ctfassets.net/5de70he6op10/4gWq1G4qLLgmqlNeHfzV2T/55298745127c36c5876f4013434c0c37/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917_Copy_2.svg"/>
+        <ion-icon style="font-size: 30px;color: rgb(22,122,146);" name="logo-pinterest"></ion-icon>
+        <ion-icon style="font-size: 30px;color: rgb(22,122,146);" name="logo-instagram"></ion-icon>
+        <ion-icon style="font-size: 30px;color: rgb(22,122,146);" name="logo-facebook"></ion-icon>
+        <ion-icon  style="font-size: 30px;color: rgb(22,122,146);"name="logo-twitter"></ion-icon>
+    </div>
+    <div style="margin-top: 30px;"><img width="100%" src="https://images.ctfassets.net/5de70he6op10/6QWLFz6Lw3Gua0R6sZm9OU/61d2acdd321f73a35d140957a266f02c/Holiday22_SiteFooter_DownloadTheApp_LS.jpg"/></div>
+    <p style="text-align: center;margin-top: 30px;">US &#160 France &#160 Germany  &#160 Italy &#160 Spain &#160 UK</p>
+    </div>
+    
+
+</body>
+</html>
+<script>
+    document.getElementById("signIn").addEventListener("click",function(){
+        window.location.href="SignIn.html"
+    })
+ let input=document.querySelector("#nav input")
+ input.addEventListener("click",function(){
+      let x= document.querySelector("#nav input");
+      x.style.width="300px";
+    })
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+    
+</script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.
