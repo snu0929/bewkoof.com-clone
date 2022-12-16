@@ -48,7 +48,7 @@
         padding: 12px;
         padding-left: 20px;
         padding-right: 40px;
-        border-radius: 4px;
+        border-radius: 6px;
         border-color: grey;
      }
      #nav>div:nth-child(4){
@@ -133,6 +133,127 @@
   #info+div{
     text-align: center;
   }
+  .overlay{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    opacity: 0;
+  }
+  .showOverlay{
+    opacity: 1;
+    z-index: 1;
+  }
+  .login-form{
+    width: 400px;
+    background-color: white;
+    padding: 25px;
+    position: absolute;
+    left: 50%;
+    top:-50%;
+    z-index: 9;
+    transform: translate(-50%,-50%);
+  }
+  .showLogin-form{
+    top:50%;
+  }
+  .login-form input{
+    width: 100%;
+    margin-bottom: 25px;
+    height:40px
+  }
+  .login-form button{
+    background-color: rgb(75,86,102);
+    width: 100%;
+    padding: 15px 15px;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    
+  }
+  .login-form span{
+    position: absolute;
+    right: 0px;
+    height: 35px;
+    width:35px;
+    top:0px;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: rgb(75,86,102);
+  }
+  
+
+
+
+
+
+  .overlays{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    opacity: 0;
+  }
+  .showOverlays{
+    opacity: 1;
+    z-index: 1;
+  }
+  .signUp-form{
+    width: 400px;
+    background-color: white;
+    padding: 25px;
+    position: absolute;
+    left: 50%;
+    top:-70%;
+    z-index: 9;
+    transform: translate(-50%,-50%);
+   
+  }
+  .showSignUp-form{
+    top:70%;
+  }
+  .signUp-form input{
+    width: 100%;
+    margin-bottom: 25px;
+    height:40px
+  }
+  .signUp-form button{
+    background-color: rgb(75,86,102);
+    width: 100%;
+    padding: 15px 15px;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    
+  }
+  .signUp-form span{
+    position: absolute;
+    right: 0px;
+    height: 35px;
+    width:35px;
+    top:0px;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: rgb(75,86,102);
+  }
+  #xd{
+    width: auto;
+    height: auto;
+  }
     </style>
 </head>
 <body>
@@ -144,7 +265,7 @@
         </div>
         <div>
             <p> <ion-icon name="globe-outline"></ion-icon> English($) &#160 <ion-icon style="font-size:20px;" name="person-outline"></ion-icon> &#160
-                &#160 <span id="signIn">Sign In</span>/<span id="signUp">Sign Up</span></p>
+                &#160 <span id="signIn" onclick="showModel()">Sign In</span>/<span id="signUp" onclick="showModels()">Sign Up</span></p>
         </div>
         <div>
             <div>
@@ -156,7 +277,7 @@
             <div>
                 
               <input type="text" placeholder="Search Anthropolpgie " /> 
-              <ion-icon style="font-size:28px;" name="bag-outline"></ion-icon>
+              <ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon>
             </div>
            
         </div>
@@ -301,19 +422,106 @@
     <div style="margin-top: 30px;"><img width="100%" src="https://images.ctfassets.net/5de70he6op10/6QWLFz6Lw3Gua0R6sZm9OU/61d2acdd321f73a35d140957a266f02c/Holiday22_SiteFooter_DownloadTheApp_LS.jpg"/></div>
     <p style="text-align: center;margin-top: 30px;">US &#160 France &#160 Germany  &#160 Italy &#160 Spain &#160 UK</p>
     </div>
-    
+     <div class="overlay"></div> 
 
+     <div class="login-form">
+        <span id="cut">&times</span>
+        <form action="">
+            <h2>Sign In</h2><hr>
+            <p>Sign in so you can save items to your wishlists, track your orders, and check out faster!</p>
+           <div>
+            <label for="">Email*</label>
+            <input type="text"/>
+           </div>
+           <div>
+            <label for="">Password*</label>
+            <input type="password"/>
+           </div>
+           <p>keep me signed in</p>
+           <button id="next">NEXT</button><br>
+           <button>USE MOBILE NUMBER INSTEAD</button>
+           <hr>
+           <h2>Sign Up</h2>
+           <p>Welcome! It's quick and easy to set up an account</p>
+           <button>CREATE AN ACCOUNT</button>
+        </form>
+     </div>
+
+     <div class="overlays"></div> 
+     <div class="signUp-form">
+        <span id="cuts">&times</span>
+        <form action="">
+            <h2>Create An Account</h2><hr>
+            <p>Welcome to Anthropologie! It's quick and easy to set up an account.</p>
+           <div>
+            <label for="">Email*</label>
+            <input type="text"/>
+           </div>
+           <div>
+            <label for="">Mobile number*</label>
+            <input type="number" placeholder="enter Number"/>
+           </div>
+           <div>
+            <label for="">Password*</label>
+            <input type="password" placeholder="create password"/><br>
+            <label for="">Name*</label>
+            <input type="text"/>
+           </div>
+           <p>keep me signed in</p>
+           <button id="nexts">NEXT</button><br>
+           <div>
+              <input type="checkbox" id="xd"/>
+              <label for="xd" >Sign me up to receive Anthropologie offers, promotions and other commercial messages. By creating an account, I agree to Anthropologie's Terms of Service and Privacy Policy. I may unsubscribe at any time. Creating an account will not enroll you in SMS marketing.</label>
+           
+            </div>
+          
+          <hr>
+           <h2>Already Have An Account</h2>
+           
+           <button>Sign in</button>
+        </form>
+     </div>
+   
 </body>
 </html>
 <script>
-    document.getElementById("signIn").addEventListener("click",function(){
-        window.location.href="SignIn.html"
-    })
+    // document.getElementById("signIn").addEventListener("click",function(){
+    //     window.location.href="SignIn.html"
+    // })
  let input=document.querySelector("#nav input")
  input.addEventListener("click",function(){
       let x= document.querySelector("#nav input");
       x.style.width="300px";
     })
+
+function showModel(){
+document.querySelector(".overlay").classList.add("showOverlay")
+document.querySelector(".login-form").classList.add("showLogin-form")
+}
+function closewModel(){
+document.querySelector(".overlay").classList.remove("showOverlay")
+document.querySelector(".login-form").classList.remove("showLogin-form")
+}
+ let remove=document.querySelector("#cut")
+ remove.addEventListener("click",closewModel)
+
+
+ function showModels(){
+document.querySelector(".overlays").classList.add("showOverlays")
+document.querySelector(".signUp-form").classList.add("showSignUp-form")
+}
+function closewModels(){
+document.querySelector(".overlays").classList.remove("showOverlays")
+document.querySelector(".signUp-form").classList.remove("showSignUp-form")
+}
+ let remov=document.querySelector("#cuts")
+ remov.addEventListener("click",closewModels)
+
+ document.querySelector("#nexts").addEventListener("click",function(){
+    let login_data=JSON.parse(localStorage.getItem("login_data"))||[]
+    let form_data
+ })
+ 
 </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
     
