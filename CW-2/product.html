@@ -634,7 +634,7 @@ document.querySelector("#products").append(div)
         return elem.brand==selected;
         
        })
-      displayCard(filterData)
+      displayCard(filterData);
     }
 
     function handleRatings(){
@@ -646,7 +646,7 @@ document.querySelector("#products").append(div)
             if(selected=="Low To High"){
                 arr.sort((a,b)=>a.rating-b.rating)
             }
-            displayCard(arr)
+            displayCard(arr);
             
            }
 </script>
