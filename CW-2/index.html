@@ -213,13 +213,13 @@
     padding: 25px;
     position: absolute;
     left: 50%;
-    top:-70%;
+    top:-62%;
     z-index: 9;
     transform: translate(-50%,-50%);
    
   }
   .showSignUp-form{
-    top:70%;
+    top:62%;
   }
   .signUp-form input{
     width: 100%;
@@ -254,6 +254,9 @@
     width: auto;
     height: auto;
   }
+  #categories{
+    cursor: pointer;
+  }
     </style>
 </head>
 <body>
@@ -264,7 +267,7 @@
         <p><u>ready to ship. ready to give(or get) details</u></p>
         </div>
         <div>
-            <p> <ion-icon name="globe-outline"></ion-icon> English($) &#160 <ion-icon style="font-size:20px;" name="person-outline"></ion-icon> &#160
+            <p> <ion-icon name="globe-outline"></ion-icon> English($) &#160  <ion-icon style="font-size:20px;" name="person-outline"></ion-icon> &#160
                 &#160 <span id="signIn" onclick="showModel()">Sign In</span>/<span id="signUp" onclick="showModels()">Sign Up</span></p>
         </div>
         <div>
@@ -276,15 +279,15 @@
             </div>
             <div>
                 
-              <input type="text" placeholder="Search Anthropolpgie " /> 
-              <ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon>
+              <input type="text" placeholder="Search Anthropolpgie " /> &#160
+              <a style="color:green" href="cart.html"><ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon></a>
             </div>
            
         </div>
-        <div>
-            <p style="color: red;">Gifts  </p>
+        <div id="categories">
+            <p style="color: red;" >Gifts  </p>
             <p>New!   </p>
-            <p>Dresses       </p>
+            <p id="product_page">Dresses       </p>
             <p>Clothing       </p>
             <p>Shoes       </p>
             <p>Accessories    </p>
@@ -521,7 +524,10 @@ document.querySelector(".signUp-form").classList.remove("showSignUp-form")
     let login_data=JSON.parse(localStorage.getItem("login_data"))||[]
     let form_data
  })
- 
+                                         
+    document.querySelector("#product_page").addEventListener("click",function(){
+      window.location.href="product.html"
+    })
 </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
     

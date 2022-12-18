@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Products</title>
     <style>
         body{
             margin: 0;
@@ -67,6 +67,7 @@
         display: flex;
         width: 90%;
         margin: auto;
+        gap: 30px;
         
      }
      #all>div:nth-child(1){
@@ -85,7 +86,12 @@
         grid-template-columns: repeat(4,1fr);
         gap: 20px;
         text-align: center;
+        
      }
+     #all>div:nth-child(2)>div{
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+     }
+     
     #products>div>img{
         width: 100%;
     }
@@ -152,8 +158,8 @@
                 </div>
                 <div>
                     
-                  <input type="text" oninput="search()" id="search" placeholder="Search Anthropolpgie " /> &#160 &#160
-                  <ion-icon style="font-size:28px; margin-top: 5px;" name="bag-outline"></ion-icon>
+                    <input type="search" placeholder="Search Anthropolpgie " oninput="search()" id="search" /> &#160
+                    <a style="color:green" href="cart.html"><ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon></a>
                 </div>
                
             </div>
@@ -221,10 +227,10 @@
                         <option value="Stella Nova">Stella Nova</option>
                     </select><br><hr>
 
-                    <select style="border:none">
+                    <select style="border:none" onchange="handleRatings()" id="rate">
                         <option value="" >Ratings +</option>
-                        <option value="L">Amdi</option>
-                        <option value="H">Beach Riot</option>
+                        <option value="Low To High">Low To High</option>
+                        <option value="High To Low">High To Low</option>
                        
                     </select><br><hr>
                     <select style="border:none">
@@ -334,21 +340,212 @@ let input=document.querySelector("#nav input")
         des:"By Anthropologie Twofer Sweater Dress",
         price:["$",899],
         rating:4.6
-       }
+       },
        {
-        img:"https://images.urbndata.com/is/image/Anthropologie/4130529100015_030_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130572650046_034_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
         brand:"Stella Nova",
-        des:"The Marais Printed Chiffon Maxi Dress",
-        price:["$",899],
+        des:"Delfi Collective Velvet Slip Dress",
+        price:["$",859],
         rating:2.6,
-       }
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130916210109_041_b4?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Ganni",
+        des:"The Somerset Maxi Dress: Velvet Edition",
+        price:["$",1029],
+        rating:4.8
+       },
 
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130607630015_001_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
+        brand:"Cecilio Prado",
+        des:"Maeve Button-Front Poplin Dress",
+        price:["$",189],
+        rating:3.9
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130647160153_038_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Beach Riot",
+        des:"Maeve Tiered Shirt Dress",
+        price:["$",349],
+        rating:3.6,
+        
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130916210111_066_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
+        brand:"Amdi",
+        des:"The Somerset Mini Dress: Velvet Edition",
+        price:["$",649],
+        rating:3.7,
+        
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/79650156_010_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
+        brand:"Amdi",
+        des:"Dippin' Daisy's Waikiki Dress",
+        price:["$",49],
+        rating:3.8,
+        
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/80233265_031_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
+        brand:"Beach Riot",
+        des:"By Anthropologie V-Neck Knit Dress",
+        price:["$",79],
+        rating:2.6,
+        
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/66653890_263_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Cecilio Prado",
+        des:"Maeve Button-Front Poplin Dress",
+        price:["$",89],
+        rating:4.6
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/80076136_090_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720",
+        brand:"Ganni",
+        des:"Sanctuary V-Wire Mini Cover-Up Dress",
+        price:["$",99],
+        rating:2.8
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/78586971_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Stella Nova",
+        des:"By Anthropologie V-Neck Dress",
+        price:["$",89],
+        rating:4.7
+       },
+
+
+
+
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/69069011_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Amdi",
+        des:"Maeve One-Shoulder Sequin Dress",
+        price:["$",549],
+        rating:3.7,
+        
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/69263325_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Beach Riot",
+        des:"The Marais Chiffon Maxi Dress: Satin Burnout Edition",
+        price:["$",649],
+        rating:3.5,
+        
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/78196615_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Cecilio Prado",
+        des:"Current Air Tiered Sweater Dress Set",
+        price:["$",489],
+        rating:4.2
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/76048354_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Ganni",
+        des:"Bhanuni Jyoti Tiered Short-Sleeve Dress",
+        price:["$",229],
+        rating:4.1
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/80246531_031_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Stella Nova",
+        des:"By Anthropologie Twofer Sweater Dress",
+        price:["$",899],
+        rating:4.6
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/69142727_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Stella Nova",
+        des:"Delfi Collective Velvet Slip Dress",
+        price:["$",859],
+        rating:2.6,
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130927040002_068_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Ganni",
+        des:"The Somerset Maxi Dress: Velvet Edition",
+        price:["$",1029],
+        rating:4.8
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/68523869_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Cecilio Prado",
+        des:"Maeve Button-Front Poplin Dress",
+        price:["$",189],
+        rating:3.9
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/64720147_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Beach Riot",
+        des:"Maeve Tiered Shirt Dress",
+        price:["$",349],
+        rating:3.6,
+        
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130934030004_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Amdi",
+        des:"The Somerset Mini Dress: Velvet Edition",
+        price:["$",649],
+        rating:3.7,
+        
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/4130921430026_066_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Amdi",
+        des:"Dippin' Daisy's Waikiki Dress",
+        price:["$",49],
+        rating:3.8,
+        
+       },
+
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/66441080_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Beach Riot",
+        des:"By Anthropologie V-Neck Knit Dress",
+        price:["$",79],
+        rating:2.6,
+        
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/80031040_001_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Cecilio Prado",
+        des:"Maeve Button-Front Poplin Dress",
+        price:["$",89],
+        rating:4.6
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/78037892_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Ganni",
+        des:"Sanctuary V-Wire Mini Cover-Up Dress",
+        price:["$",99],
+        rating:2.8
+       },
+       {
+        img:"https://images.urbndata.com/is/image/Anthropologie/79234704_011_b2?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349",
+        brand:"Stella Nova",
+        des:"By Anthropologie V-Neck Dress",
+        price:["$",89],
+        rating:4.7
+       },
     ]
 
     function displayCard(data){
         document.querySelector("#products").textContent=null
         data.forEach(function(el){
 let div=document.createElement("div")
+
 
  let img=document.createElement("img")
 img.setAttribute("src",el.img)
@@ -362,6 +559,15 @@ let rating=document.createElement("p")
 rating.textContent=el.rating
 let add=document.createElement("button")
 add.textContent="Buy"
+ add.style.backgroundColor="rgb(75,86,102)"
+ add.style.border="none"
+ add.style.color="white"
+
+ add.addEventListener("click",function(){
+    let cartItems=JSON.parse(localStorage.getItem("cart"))||[]
+    cartItems.push(el)
+    localStorage.setItem("cart",JSON.stringify(cartItems))
+ })
 
 div.append(img,brand,des,price,rating,add)
 document.querySelector("#products").append(div)
@@ -381,6 +587,32 @@ document.querySelector("#products").append(div)
             if(selected=="Low To High"){
                 arr.sort((a,b)=>a.price[1]-b.price[1])
             }
+            else if(selected=='A To Z'){
+      arr.sort(function (a,b){
+        if(a.des<b.des){
+          return -1;
+        }
+        else if(a.des>b.des){
+          return 1;
+        }
+        else{
+          return 0;
+        }
+      })
+    }
+    else{
+      arr.sort(function (a,b){
+        if(a.des<b.des){
+          return 1;
+        }
+        else if(a.des>b.des){
+          return -1;
+        }
+        else{
+          return 0;
+        }
+      })
+    }
             displayCard(arr)
             
            }
@@ -404,6 +636,19 @@ document.querySelector("#products").append(div)
        })
       displayCard(filterData)
     }
+
+    function handleRatings(){
+            let selected=document.querySelector("#rate").value
+            console.log(selected)
+            if(selected=="High To Low"){
+                arr.sort((a,b)=>b.rating-a.rating)
+            }
+            if(selected=="Low To High"){
+                arr.sort((a,b)=>a.rating-b.rating)
+            }
+            displayCard(arr)
+            
+           }
 </script>
 
     
