@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>shipping Address</title>
     <style>
-        body{
+         body{
             margin: 0;
         }
-        p{
-            font-family: Arial, Helvetica, sans-serif;
-        }
+       p{
+        font-family: Arial, Helvetica, sans-serif;
+       }
+       h3{
+        font-family:Arial;
+       }
         #nav>div:nth-child(1){
             display: grid;
             grid-template-columns: repeat(3,1fr);
@@ -63,40 +66,17 @@
         display: flex;
         width: 92%;
         margin: auto;
-        gap:40px;
+        gap: 35px;
      }
-     
-    #all_cart_details{
-        width: 72%;
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        gap: 20px;
-    }
-    #summary{
-        width: 28;
-    }
-    #all_cart_details>div{
-        display: flex;
-        gap: 20px;
-        box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-    }
-    #all_cart_details img{
-        width: 100%;
-    }
-    #all_cart_details>div>div:nth-child(3){
-        display: flex;
-        width: 60%;
-        justify-content: space-evenly;
-        text-align: center;
-        
-    }
-    #all_cart_details>div>div:nth-child(1){
-  width: 20%;
-    }
-    #all_cart_details>div>div:nth-child(2){
-  width: 20%;
-    }
-    #summary{
+     #all>div:nth-child(1){
+        width: 65%;
+     }
+     #all>div:nth-child(1) input{
+       width: 30%;
+        padding: 10px;
+        margin: 8px;
+     }
+     #summary{
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
         padding: 15px;
         margin: auto;
@@ -105,7 +85,45 @@
         justify-content: center;
         
     }
-    
+
+     #footer{
+        width: 93%;
+        margin: auto;background-color: rgb(230, 229, 223);
+        margin-top: 100px;
+     }
+     #footer>div:nth-child(2){
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        padding-right: 100px;
+     }
+     #footer>div:nth-child(2)+p{
+        padding-left: 100px;
+        padding-right: 100px;
+     }
+     #footer input{
+        padding-left: 150px;
+        padding-right: 100px;
+        margin-right: 15px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+     }
+     #footer button{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        background-color: rgb(75,86,102);
+        color: white;
+        border: none;
+     }
+    #info{
+        display: flex;
+        justify-content: space-around;
+    }
+  #info+div{
+    text-align: center;
+  }
     </style>
 </head>
 <body>
@@ -117,7 +135,7 @@
             </div>
             <div>
                 <p> <ion-icon name="globe-outline"></ion-icon> English($) &#160 <ion-icon style="font-size:20px;" name="person-outline"></ion-icon> &#160
-                    &#160 <span id="signIn" onclick="showModel()">sonu</span><span id="signUp" onclick="showModels()">Kumar</span></p>
+                    &#160 <span id="signIn" onclick="showModel()">Sonu</span>/<span id="signUp" onclick="showModels()">Kumar</span></p>
             </div>
             <div>
                 <div>
@@ -128,15 +146,15 @@
                 </div>
                 <div>
                     
-                  <input type="text" placeholder="Search Anthropolpgie " /> 
-                  <ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon>
+                    <input type="search" placeholder="Search Anthropolpgie " oninput="search()" id="search" /> &#160
+                    <a style="color:green" href="cart.html"><ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon></a>
                 </div>
                
             </div>
-            <div id="categories">
-                <p style="color: red;" >Gifts  </p>
+            <div>
+                <p style="color: red;">Gifts  </p>
                 <p>New!   </p>
-                <p id="product_page">Dresses       </p>
+                <p>Dresses       </p>
                 <p>Clothing       </p>
                 <p>Shoes       </p>
                 <p>Accessories    </p>
@@ -147,141 +165,138 @@
                 <p> Sale </p>
             </div>
             </div>
+            <h2 style="text-align:center">Ship</h2>
             <div id="all">
-                <div id="all_cart_details">
                 
+                <div><hr>
+                  <h3>Shipping Address*</h3>
+                  <label>County/Region</label>
+                  <input placeholder="India"/><br>
+
+                  <label>First Name*</label>
+                  <input placeholder="Enter First Name Here"/>
+
+                  <label>Last Name*</lable>
+                  <input placeholder="Enter Last Name Here"/><br>
+
+                  <label>Street Address*</label>
+                  <input placeholder="35 character limit,continue below"/><br>
+
+                  <label> Address2*</label>
+                  <input placeholder="Building,Suite and Apartment"/><br>
+
+                 
+
+                  <lable> City*</lable>
+                <input placeholder="Enter City name Here"/>
+
+                <lable> Province or Region*</lable>
+                <input placeholder="Province or Region"/><br>
+
+                <lable> PostCode *</lable>
+                <input placeholder="Enter Postcode Here"/><br>
+
+                <lable> mobile*</lable>
+                <input placeholder="+91"/><br>
+                
+
                 </div>
                 <div id="summary">
-                     <p>Subtotal &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160  &#160 <span id="total"></span> </p>
+                    <p>Subtotal &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160  &#160 <span id="total"></span> </p>
                      <p>Shipping &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160  TBD</p>
                      <p>Estimated Tax Shipping &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160  &#160 $0.00 </p>
                      <p>Total &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 <spna id="total_price" style="font-weight:bold"></spna> </p><br>
                      <p style="font-size: 13px;">Or 4 interest-free installments of $102.25 with <br><span style="font-weight:bold">Klarna</span>. or<span style="font-weight:bold">Afterpay</span> </p>
-                     <button style="width:100%;color:white;background-color:rgb(75,86,102);padding:14px;border: none;" id="checkout">PROCEED TO CHECKOUT</button>
+                     <button style="width:100%;color:white;background-color:rgb(75,86,102);padding:14px;border: none;" id="payment">CONTINUE TO PAYMENT</button>
                      <img width="35%" style=" padding-left:10px;padding-right:10px;margin-top: 15px;box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;" src="data:image/png;base64,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"/>
                     <hr>
                     <p style="font-size:20px" >Promo Code</p>
                     <input placeholder="Enter Code Here" id="promo" style="width:70%;padding:10px"/><button id="apply" style="padding:10px">APPLY</button>
                     <p id="wrong" style="color:red;"></p>
                     </div>
-            </div>
+                </div>
+                <div id="footer">
+                    <div>
+                        <h2>About Us</h2>
+                        <p>Our mission at Anthropologie has always been to surprise and delight you with unexpected, distinctive finds for your closet and home. We source and craft all of our products with care, ensuring that any treasure you find at Anthropologie is unique, just like you. Explore our dresses shop to find styles and fits perfect for any occasion, from cocktail party dresses to wedding guest dresses to casual daytime silhouettes. Shop BHLDN and take a look at our selection of wedding dresses. Browse party skirts, wide-leg pants and jeans, and blouses that will turn heads. Complete your look with uncommon accessories—think only-here slides and head-turning totes. Discover our expansive home collections, from furniture to curtains, decorative pillows to duvets, wall art to Moroccan-inspired rugs. Looking for a housewarming gift? Try a coffee table book, original glassware or a set of coasters.</p>
+                    <hr>
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Sign Up for Email</h2>                 
+                            <p>Receive early access to new arrivals, sales, exclusive content, events and much more!</p>
+                        </div>
+                        <div>
+                            <h3>Email Adresss*</h3>
+                            <input type="text"/>
+                            <button>SUBMIT</button>
+                        </div>
+                        
+                    </div>
+                    <p>By signing up, you will receive Anthropologie offers, promotions and other commercial messages. You are also agreeing to Anthropologie’s Privacy Policy. You may unsubscribe at any time.</p>
+                  <hr> 
+                  <div id="info">
+                    <div>
+                        <h3>Help</h3>
+                        <p>Track Your Order</p>
+                        <p>Start A Return Or Exchange (US)</p>
+                        <p>Returns & Exchanges</p>
+                        <p>Returns & Exchanges</p>
+                        <p>Shoping</p>
+                        <p>Customer Service</p>
+                        <p>Current Promotions</p>
+                        <p>Product Recalls</p>   
+                    </div>
+                    <div>
+                        <h3>About</h3>
+                        <p>Our Story</p>
+                        <p>Events</p>
+                        <p>A Greater Good</p>
+                        <p>Diversity & Inclusion</p>
+                        <p>Stories</p>
+                      
+                    </div>
+                    <div>
+                        <h3>Services</h3>
+                        <p>AnthroPerks</p>
+                        <p>Gift Cards</p>
+                        <p>AnthroLiving Designer & Trade Program</p>
+                        <p>Furniture: Guides & Services</p>
+                        <p>Store Pickup & Collection Points</p>
+                        <p>Klarna</p>
+                    </div>
+                    <div>
+                        <h3>Connect</h3>
+                        <p>Contact Us</p>
+                        <p>Stay Connected</p>
+                        <p>Careers</p>
+                        <p>Styling Services</p>
+                        <p>Request A Catalog</p>
+                    </div>
+                    <div>
+                        <a href="https://www.anthropologie.com/stores">Store Locator</a><br>
+                        <a href="signIn.html">Get Email</a>
+                    </div>
             
+                  </div>  
+                  <div><img src="https://images.ctfassets.net/5de70he6op10/4gWq1G4qLLgmqlNeHfzV2T/55298745127c36c5876f4013434c0c37/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917_Copy_2.svg"/>
+                    <ion-icon style="font-size: 30px;color: rgb(22,122,146);" name="logo-pinterest"></ion-icon>
+                    <ion-icon style="font-size: 30px;color: rgb(22,122,146);" name="logo-instagram"></ion-icon>
+                    <ion-icon style="font-size: 30px;color: rgb(22,122,146);" name="logo-facebook"></ion-icon>
+                    <ion-icon  style="font-size: 30px;color: rgb(22,122,146);"name="logo-twitter"></ion-icon>
+                </div>
+                <div style="margin-top: 30px;"><img width="100%" src="https://images.ctfassets.net/5de70he6op10/6QWLFz6Lw3Gua0R6sZm9OU/61d2acdd321f73a35d140957a266f02c/Holiday22_SiteFooter_DownloadTheApp_LS.jpg"/></div>
+                <p style="text-align: center;margin-top: 30px;">US &#160 France &#160 Germany  &#160 Italy &#160 Spain &#160 UK</p>
+                </div>
 </body>
 </html>
 <script>
-    let cartItems=JSON.parse(localStorage.getItem("cart"))||[]
- let x;
-    function displayCard(data){
-        document.querySelector("#all_cart_details").textContent=null
-        
-
-        cartItems.forEach(function(el,i){
-
-            
-            let main=document.createElement("div")
-            
-            //image
-            let div=document.createElement("div")
-            let img=document.createElement("img")
-            img.setAttribute("src",el[0].img)
-            let min=document.createElement("button")
-            min.textContent="-"
-            
-            min.addEventListener("click",function(){
-               
-                if(qty.textContent<=1){
-              cartItems.splice(i,1)
-              localStorage.setItem("cart",JSON.stringify(cartItems))
-              window.location.reload();
-            }else{
-              el[1]--
-              localStorage.setItem("cart",JSON.stringify(cartItems))
-              qty.textContent--
-              window.location.reload();
-            }
-            })
-            
-            let add=document.createElement("button")
-            add.textContent="+"
-            
-            add.addEventListener("click",function(){
-                el[1]++
-            localStorage.setItem('cart',JSON.stringify(cartItems));
-            qty.textContent++
-            window.location.reload();
-            })
-
-            let del=document.createElement("button")
-            del.textContent="Remove"
-            
-            del.addEventListener("click",function(){
-                cartItems.splice(i,1)
-              localStorage.setItem("cart",JSON.stringify(cartItems))
-              window.location.reload();
-            })
-            div.append(img,)
-             
-            //details
-            let div2=document.createElement("div")
-             
-            let des=document.createElement("h4")
-            des.textContent=el[0].des
-            let color=document.createElement("p")
-            color.textContent=el[0].color
-            let style=document.createElement("p")
-            style.textContent=el[0].style_code
-            let size=document.createElement("p")
-            size.textContent=el[0].size
-            let fit=document.createElement("p")
-            fit.textContent=el[0].fit
-            div2.append(des,color,style,size,fit,min,add,del)
-
-            //price
-            let hr=document.createElement("hr")
-            let div3=document.createElement("div")
-            let price=document.createElement("p")
-            price.textContent="$"+el[0].price[1]+".00"
-            
-            let qty=document.createElement("h3")
-            qty.textContent=el[1]
-           
-            let total=document.createElement("h3")
-            total.textContent="$"+el[0].price[1]*qty.textContent+".00"
-            div3.append(price,qty,total)
-            
-         
-            
-           main.append(div,div2,div3,)
-           document.querySelector("#all_cart_details").append(main)
-
-           
-        })
-    }
-    displayCard(cartItems)
-   
-    let total=cartItems.reduce((acc,el)=>acc+(+el[0].price[1]*el[1]),+0);
-    console.log(total)
-   
+    let total=localStorage.getItem("total")||[]
     document.querySelector("#total").innerText="$"+total+".00"
     document.querySelector("#total_price").innerText="$"+total+".00"
-   
-    
-    
-    document.querySelector("#apply").addEventListener("click",function(){
-        let val=document.querySelector("#promo").value
-        if(val=="discount15"){
-            total=total-(total*0.15)
-            document.querySelector("#total_price").textContent="$"+total+".00"
-            
-            localStorage.setItem("total",total)
-              
-        }else{
-            document.querySelector("#wrong").textContent="Wrong Promo Code"
-        }
+
+    document.querySelector("#payment").addEventListener("click",function(){
+        window.location.href="payment.html"
     })
-    
-    document.querySelector("#checkout").addEventListener("click",function(){
-        window.location.href="shipping.html"
-    })
-    
+
 </script>
