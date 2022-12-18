@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #nav>div:nth-child(1){
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            background-color: rgb(56,89,84);
+            color: white;
+           
+          
+           padding-left: 280px;
+           padding-right: 280px;
+           margin: 0px;  
+           text-align: center; 
+           align-items: center;
+           font-family: Arial;
+          
+        }
+        #nav>div:nth-child(2){
+          display: flex;
+          justify-content: end;
+          padding-right: 50px;
+          background-color: rgb(212, 212, 211);
+        }
+      #nav>div:nth-child(3){
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 10px;
+        
+      }
+      #nav>div:nth-child(3)>div:nth-child(2){
+        padding-right: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      
+     #nav input{
+        padding: 12px;
+        padding-left: 20px;
+        padding-right: 40px;
+        border-radius: 6px;
+        border-color: grey;
+     }
+     #nav>div:nth-child(4){
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        display: flex;
+        justify-content: space-around;
+        padding-right: 300px;
+     }
+     #all_cart_details{
+        display: flex;
+        width: 92%;
+        margin: auto;
+        height: auto;
+        gap:25px;
+        margin-top: 30px;
+     }
+     #image{
+        
+        width: 12%;
+     }
+     #product_details{
+        
+        width: 17%;
+     }
+     #price{
+        
+        width: 30%;
+
+     }
+     #price>div{
+        gap:25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+     }
+     #summary{
+        width: 26%;
+       
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        margin: auto;
+        padding: 25px;
+     }
+     #image img{
+        width: 100%;
+     }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div>
+            <p> <i>The Gleaming promise Event ends tonight!</i></p>
+            <p>our BESTSELLING mirror is 30% OFF!! </p>
+            <p><u>ready to ship. ready to give(or get) details</u></p>
+            </div>
+            <div>
+                <p> <ion-icon name="globe-outline"></ion-icon> English($) &#160 <ion-icon style="font-size:20px;" name="person-outline"></ion-icon> &#160
+                    &#160 <span id="signIn" onclick="showModel()">Sign In</span>/<span id="signUp" onclick="showModels()">Sign Up</span></p>
+            </div>
+            <div>
+                <div>
+                    <img 
+                    src="https://images.ctfassets.net/5de70he6op10/7q3Z6vJ6UEPFyAPKAFZZxl/1a22eec777828277571187c43306e983/Anthropologie_Holiday_Lockup__1_update.svg" />
+                <img 
+                    src="https://images.ctfassets.net/5de70he6op10/y1O9tEDOvCGliGUvT9RoJ/eb8ab4734c5e3778b8b61da70ed441ac/AL_NewLogo_2.svg" />
+                </div>
+                <div>
+                    
+                  <input type="text" placeholder="Search Anthropolpgie " /> 
+                  <ion-icon style="font-size:28px;  margin-top: 5px" name="bag-outline"></ion-icon>
+                </div>
+               
+            </div>
+            <div id="categories">
+                <p style="color: red;" >Gifts  </p>
+                <p>New!   </p>
+                <p id="product_page">Dresses       </p>
+                <p>Clothing       </p>
+                <p>Shoes       </p>
+                <p>Accessories    </p>
+                <p>BHLDN Weddings  </p>
+                <p>  Beauty & Wellnes  </p>
+                <p>Home & Furniture </p>
+                <p> Garden & Outdoor </p>
+                <p> Sale </p>
+            </div>
+            </div>
+            <div id="all_cart_details">
+                <div id="image"></div>
+                <div id="product_details"></div>
+                <div id="price"></div>
+                <div id="summary"></div>
+            </div>
+</body>
+</html>
+<script>
+    let cartItems=JSON.parse(localStorage.getItem("cart"))||[]
+
+    function displayCard(data){
+        document.querySelector("#image").textContent=null
+
+        data.forEach(function(el){
+            let div=document.createElement("div")
+            let div2=document.createElement("div")
+            let div3=document.createElement("div")
+            let div4=document.createElement("div")
+
+            let img=document.createElement("img")
+            img.setAttribute("src",el.img)
+            
+            //image
+            document.querySelector("#product_details").append(div2)
+            div.append(img)
+            document.querySelector("#image").append(div)
+            //details
+            let details=document.createElement("p")
+            details.textContent=el.des
+            div2.append(details)
+            //price
+            let price=document.createElement("p")
+            price.textContent="$"+el.price[1]
+            let qty=document.createElement('p')
+            qty.textContent=1
+            let total="$"+el.price[1]*qty.textContent
+            console.log(total)
+            div3.append(price,qty,total)
+            document.querySelector("#price").append(div3)
+            //summary
+            let subtotal=document.createElement("p")
+            subtotal.textContent="Subtotal"+total
+   
+            div4.append(subtotal)
+            document.querySelector("#summary").append(div4)
+            
+        })
+    }
+    displayCard(cartItems)
+</script>
